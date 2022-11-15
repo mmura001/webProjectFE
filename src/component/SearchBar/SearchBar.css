@@ -31,7 +31,7 @@ input:focus {
   font-size: 35px;
 }
 
-.dataResult {
+/* .dataResult {
   margin-top: 5px;
   width: 300px;
   height: 200px;
@@ -39,9 +39,9 @@ input:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
-}
+} */
 
-.dataResult::-webkit-scrollbar {
+/* .dataResult::-webkit-scrollbar {
   display: none;
 }
 
@@ -66,4 +66,4 @@ a:hover {
 
 #clearBtn {
   cursor: pointer;
-}
+} */

@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.registration, .login {
+.registration, .login, .insert {
   display: flex;
   flex-direction: column;
   justify-content: center;

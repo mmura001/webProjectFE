@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "../App.css";
 import { useDispatch } from "react-redux";
-import { registerFunction } from "../HomePage/homeSlice";
+import { registerFunction } from "state/reducers/home.reducer";
 import { Box } from "@material-ui/core";
 
 export default function Registration() {
@@ -12,25 +12,22 @@ export default function Registration() {
   const [usernameReg, setUsernameReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
 
-  
   const register = () => {
     const tempForm = {
       username: usernameReg,
-      email:emailReg,
+      email: emailReg,
       password: passwordReg,
-    }
-    dispatch(registerFunction(tempForm))
-    
+    };
+    dispatch(registerFunction(tempForm));
   };
 
-  
   return (
     <div className="App">
       <div className="registration">
-      <Box style={{ paddingTop:80 }}>
-        <h1>Registration</h1>
+        <Box style={{ paddingTop: 80 }}>
+          <h1>Registration</h1>
         </Box>
-        <label>Username</label>
+        <label>Full Name</label>
         <input
           type="text"
           onChange={(e) => {
@@ -53,7 +50,6 @@ export default function Registration() {
         />
         <button onClick={register}> Register </button>
       </div>
-
     </div>
   );
 }
