@@ -4,13 +4,19 @@ import "../App.css";
 import { useDispatch } from "react-redux";
 import { registerFunction } from "state/reducers/home.reducer";
 import { Box } from "@material-ui/core";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Registration() {
+  const [verified, setVerified] = useState(false);
   const dispatch = useDispatch();
 
   const [emailReg, setemailReg] = useState("");
   const [usernameReg, setUsernameReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerified(true);
+  }
 
   const register = () => {
     const tempForm = {
@@ -48,7 +54,14 @@ export default function Registration() {
             setPasswordReg(e.target.value);
           }}
         />
-        <button onClick={register}> Register </button>
+        <ReCAPTCHA
+          sitekey="6LcjBVcjAAAAABFlVjaFMdZQCu8o0c3SDLjRO_UK"
+          onChange={onChange}
+        />
+        <button onClick={register} disabled={!verified}>
+          {" "}
+          Register{" "}
+        </button>
       </div>
     </div>
   );

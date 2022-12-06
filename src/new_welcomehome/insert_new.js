@@ -64,8 +64,14 @@ function InsertNew() {
 
   const handleInputChange = (e, key) => {
     switch (key) {
-      case "advisor":
+      case "title":
         setTitle(e.target.value);
+        break;
+      case "textt":
+        setTextt(e.target.value);
+        break;
+      case "advisor":
+        setAdvisor(e.target.value);
         break;
 
       case "author":
@@ -79,12 +85,6 @@ function InsertNew() {
         break;
       case "university":
         setUniversity(e.target.value);
-        break;
-      case "title":
-        setAdvisor(e.target.value);
-        break;
-      case "textt":
-        setTextt(e.target.value);
         break;
 
       case "year":
@@ -101,6 +101,18 @@ function InsertNew() {
         <Box style={{ paddingTop: 80 }}>
           <h1>New Creation</h1>
         </Box>
+        <Typography>title</Typography>
+        <input
+          type="text"
+          placeholder="title"
+          onChange={(e) => handleInputChange(e, "title")}
+        />
+        <Typography>text</Typography>
+        <input
+          type="text"
+          placeholder="text"
+          onChange={(e) => handleInputChange(e, "textt")}
+        />
         <Typography>Advisor</Typography>
         <input
           type="text"
@@ -131,18 +143,7 @@ function InsertNew() {
           placeholder="university"
           onChange={(e) => handleInputChange(e, "university")}
         />
-        <Typography>title</Typography>
-        <input
-          type="text"
-          placeholder="title"
-          onChange={(e) => handleInputChange(e, "title")}
-        />
-        <Typography>text</Typography>
-        <input
-          type="text"
-          placeholder="text"
-          onChange={(e) => handleInputChange(e, "textt")}
-        />
+
         <Typography>year</Typography>
         <input
           type="text"

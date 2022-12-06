@@ -13,11 +13,14 @@ body {
 
 
 .NewHome {
+	text-align: center;
 	margin-top: 50px;
 	min-height: 50vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	/* display: flex; */
+	/* flex-direction: row; */
+	/* justify-content: center;
+	align-items: center; */
+	width: 100%;
 }
 
 header {
@@ -37,16 +40,18 @@ h1 {
 }
 
 .search-box {
-	display: flex;
+	/* display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: center; */
+	display:inline-block;
 	border-radius: 16px;
 	overflow: hidden;
-	width: 100%;
-	max-width: 480px;
+	width: 50%;
+	/* max-width: 480px; */
 	transition: 0.4s;
 	margin-bottom: 16px;
-	margin-left: 500px;
+	/* margin-left: 20vw;
+	margin-right: 20vw; */
 }
 
 .search-box input {
@@ -57,6 +62,12 @@ h1 {
 	padding: 16px;
 	width: 100%;
 	transition: 0.4s;
+}
+
+.search-box2 {
+	display:inline-block;
+
+
 }
 
 .search-box:focus-within {
@@ -113,4 +124,12 @@ h1 {
 
 .result a:hover {
 	background-color: #FF4FA8;
+}
+.hover-effect{
+	position: absolute;
+	top:0;
+	left:0;
+	background-color: blue;
+	padding: 20px;
+	border-radius:10px;
 }

@@ -5,13 +5,20 @@ import { useDispatch } from "react-redux";
 import { loginFunction } from "state/reducers/home.reducer";
 import { Box } from "@material-ui/core";
 import "../App.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [verified, setVerified] = useState(false);
 
   const [loginStatus, setLoginStatus] = useState("");
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerified(true);
+  }
 
   const login = () => {
     if (email !== "") {
@@ -64,7 +71,14 @@ export default function Login() {
           placeholder="Password..."
           onChange={(e) => handleInputChange(e, "password")}
         />
-        <button onClick={login}> Login </button>
+        <ReCAPTCHA
+          sitekey="6LcjBVcjAAAAABFlVjaFMdZQCu8o0c3SDLjRO_UK"
+          onChange={onChange}
+        />
+        <button onClick={login} disabled={!verified}>
+          {" "}
+          Login{" "}
+        </button>
       </div>
 
       <h1>{loginStatus}</h1>
